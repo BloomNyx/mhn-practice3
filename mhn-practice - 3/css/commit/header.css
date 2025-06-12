@@ -50,6 +50,10 @@
     display: flex;
     z-index: 1000;
     box-shadow: 0px 0px 6px #9c9c9c;
+
+    left: 50%;
+    transform: translateX(-50%);
+    width: 272px
 }
 
 .header_content {
@@ -71,6 +75,81 @@
     width: auto;
     height: 40px;
     margin: auto 0;
+}
+
+.header_company,
+.header_noonai,
+.header_itsolution,
+.header_community {
+    display: none !important;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 88px;
+  padding: 0 60px;
+}
+
+/* 로고 항상 표시 */
+.logo {
+  display: block;
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 88px;
+  padding: 0 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  display: block;
+  z-index: 2;
+}
+
+/* 기본 상태: 메뉴/버튼 표시 */
+.Company,
+.noonAI,
+.IT-solution,
+.Community,
+.hd {
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+/* 📱 모바일에서만 메뉴, 버튼 완전 제거 */
+@media (max-width: 272px) {
+  .Company,
+  .noonAI,
+  .IT-solution,
+  .Community,
+  .hd {
+    display: none !important;     /* 강제 제거 */
+    visibility: hidden !important;
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .nav-container {
+    justify-content: flex-start;
+  }
+}
+
+
+@media (max-width: 272px) {
+  .hd {
+    margin: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+  }
 }
 
 .header_company {
